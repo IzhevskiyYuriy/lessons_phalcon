@@ -9,6 +9,10 @@ class IndexController extends ControllerBase
     }
     public function indexAction()
     {
+        if (!$this->request->isPost()) {
+            $this->flash->notice('Это пример приложения Phalcon Framework.
+                Пожалуйста, не предоставляйте нам личную информацию. Спасибо');
+        }
 
     }
 }
