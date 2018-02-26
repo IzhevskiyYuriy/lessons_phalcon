@@ -3,7 +3,7 @@
     <h1>Добро подаловать в тестовый проэкт INVO </h1>
     <p>INVO - это революционное приложение для бесплатного создания счетов-фактур.
         Получайте онлайн-платежи от своих клиентов и улучшайте свой денежный поток</p>
-    <p><?= $this->tag->linkTo(['register', 'Try it for Free &raquo;', 'class' => 'btn btn-primary btn-large btn-success']) ?></p>
+    <p><?= $this->tag->linkTo(['Users', 'Try it for Free &raquo;', 'class' => 'btn btn-primary btn-large btn-success']) ?></p>
 </div>
 
 <div class="row">
