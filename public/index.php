@@ -7,6 +7,7 @@ use Phalcon\Mvc\Url as UrlProvider;
 use Phalcon\Mvc\Application;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 use Phalcon\Config;
+use Phalcon\Flash\Direct as FlashDirect;
 
 
 define ('BASE_PATH', dirname(__DIR__));
@@ -42,6 +43,22 @@ $di->set(
     }
 );
 
+// Register the flash service with custom CSS classes
+$di->set(
+    "flash",
+    function () {
+        $flash = new FlashDirect(
+            [
+                "error"   => "alert alert-danger",
+                "success" => "alert alert-success",
+                "notice"  => "alert alert-info",
+                "warning" => "alert alert-warning",
+            ]
+        );
+
+        return $flash;
+    }
+);
 
 $di->set(
     'url',

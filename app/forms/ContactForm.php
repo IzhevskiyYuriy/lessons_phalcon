@@ -6,6 +6,7 @@ use Phalcon\Forms\Element\TextArea;
 use Phalcon\Validation\Validator\PresenceOf;
 use Phalcon\Validation\Validator\Email;
 
+
 class ContactForm extends Form
 {
     public function initialize($entity = null, $oprions = null)
@@ -25,7 +26,7 @@ class ContactForm extends Form
         //Email
         $email = new Text('email');
         $email->setLabel('E-Mail');
-        $email->setFilters('E-Mail');
+        $email->setFilters('email');
         $email->addValidators([
             new PresenceOf([
                 'message' => 'Поле \'email \' не должно быть пустым',
@@ -41,7 +42,7 @@ class ContactForm extends Form
         $comments->setFilters(['striptags', 'string']);
         $comments->addValidators([
             new PresenceOf([
-                'message' => 'Поле \'email \' не должно быть пустым',
+                'message' => 'Поле \'Comments \' не должно быть пустым',
             ])
         ]);
         $this->add($comments);
