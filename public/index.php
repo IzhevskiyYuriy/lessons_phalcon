@@ -8,6 +8,7 @@ use Phalcon\Mvc\Application;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 use Phalcon\Config;
 
+
 define ('BASE_PATH', dirname(__DIR__));
 define ('APP_PATH', BASE_PATH . '/app');
 
@@ -17,6 +18,7 @@ $loader->registerDirs(
     [
         APP_PATH . '/controllers',
         APP_PATH . '/models',
+        APP_PATH . '/forms',
     ]
 );
 
@@ -39,6 +41,7 @@ $di->set(
         return $view;
     }
 );
+
 
 $di->set(
     'url',
